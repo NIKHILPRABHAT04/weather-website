@@ -6,6 +6,8 @@ const forecast = require('./utils/forecast')
 
 const app=express()
 
+const port=process.env.PORT || 3000
+
 //Define path for Express config
 const publicdirpath=path.join(__dirname,'../public')
 const viewsPath=path.join(__dirname,'../templates/views')
@@ -96,6 +98,6 @@ app.get('*',(req,res)=>{
 
 
 //For running the server on dedicated ppoprts
-app.listen(3000,()=>{
-    console.log('Server is up and running')
+app.listen(port,()=>{
+    console.log('Server is up and running '+port)
 })
